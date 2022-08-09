@@ -1,0 +1,61 @@
+<div class="login-page container">
+  <div class="login__wrapper-left">
+    <div class="login__img"></div>
+    <h2 class="login__name login__name1">Finance App</h2>
+  </div>
+
+  <div class="login__wrapper-right">
+    <div class="login__wrapper-form">
+      <app-logo></app-logo>
+
+      <h1 class="login-page__title">Wallet</h1>
+
+      <form class="login">
+        <div class="login__control">
+          <div class="login__control-wrapper">
+            <div class="login__control-icon control-icon__email"></div>
+            <input
+              type="email"
+              id="email"
+              formControlName="email"
+              placeholder="Enter email"
+            />
+          </div>
+          <div class="login__validation">
+            <small>Email is required</small>
+            <small>Provide correct e-mail</small>
+          </div>
+        </div>
+
+        <div class="login__control">
+          <div class="login__control-wrapper">
+            <div class="login__control-icon control-icon__password"></div>
+            <input
+              type="password"
+              id="password"
+              formControlName="password"
+              placeholder="Enter password"
+            />
+          </div>
+          <div class="login__validation">
+            <small>Password is required</small>
+            <small>Provide correct password</small>
+          </div>
+        </div>
+
+        <button type="submit" class="login__submit" disabled>Enter</button>
+      </form>
+
+      <button type="button" class="register__button" (click)="register()">
+        Registration
+      </button>
+
+      <div class="login__socials">
+        <app-button-google></app-button-google>
+        <app-button-fb></app-button-fb>
+      </div>
+    </div>
+
+    <h2 class="login__name login__name2">Finance App</h2>
+  </div>
+</div>

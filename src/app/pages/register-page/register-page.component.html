@@ -1,0 +1,99 @@
+<div class="register-page container">
+  <div class="register__wrapper-left">
+    <div class="register__img"></div>
+    <h2 class="register__name register__name1">Finance App</h2>
+  </div>
+
+  <div class="register__wrapper-right">
+    <div class="register__wrapper-form">
+      <app-logo></app-logo>
+
+      <h1 class="register-page__title">Wallet</h1>
+
+      <form
+        class="register"
+        [formGroup]="form"
+        (ngSubmit)="submitRegistration()"
+      >
+        <div class="register__control">
+          <div class="register__control-wrapper">
+            <div class="register__control-icon control-icon__email"></div>
+            <input
+              type="email"
+              id="email"
+              formControlName="email"
+              placeholder="Enter email"
+            />
+          </div>
+          <div class="register__validation">
+            <small>Email is required</small>
+            <small>Provide correct e-mail</small>
+          </div>
+        </div>
+
+        <div class="register__control">
+          <div class="register__control-wrapper">
+            <div class="register__control-icon control-icon__password"></div>
+            <input
+              type="password"
+              id="password"
+              formControlName="password"
+              placeholder="Enter password"
+            />
+          </div>
+          <div class="register__validation">
+            <small>Password is required</small>
+            <small>Provide correct password</small>
+          </div>
+        </div>
+
+        <div class="register__control">
+          <div class="register__control-wrapper">
+            <div
+              class="register__control-icon control-icon__confirm-password"
+            ></div>
+            <input
+              type="confirm-password"
+              id="confirm-password"
+              formControlName="confirm-password"
+              placeholder="Confirm password"
+            />
+          </div>
+          <div class="register__validation">
+            <small>Password is required</small>
+            <small>Provide correct password</small>
+          </div>
+        </div>
+
+        <div class="register__control">
+          <div class="register__control-wrapper">
+            <div class="register__control-icon control-icon__name"></div>
+            <input
+              type="text"
+              id="name"
+              formControlName="name"
+              placeholder="Enter your name"
+            />
+          </div>
+          <div class="register__validation">
+            <small>Name is required</small>
+            <small>Provide correct name</small>
+          </div>
+        </div>
+
+        <button type="submit" class="register__submit" disabled>Enter</button>
+      </form>
+
+      <button type="button" class="login__button" (click)="login()">
+        Log in
+      </button>
+
+      <div class="register__socials">
+        <app-button-google></app-button-google>
+        <app-button-fb></app-button-fb>
+      </div>
+    </div>
+
+    <h2 class="register__name register__name2">Finance App</h2>
+  </div>
+</div>
