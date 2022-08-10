@@ -1,1 +1,107 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "BauhausC";
+  src: url("./assets/fonts/bauhouse/BauhausC_Medium_Bold.ttf")
+    format("woff2");
+}
+
+@font-face {
+  font-family: "HelveticaNeueCyr";
+  src: url("./assets/fonts/HelveticaNeueCyr/HelveticaNeueCyr-Roman.ttf")
+    format("woff2");
+}
+
+:root {
+  // COLORS
+  --color-background: rgb(255, 255, 255);
+  --color-dark-background: rgb(249, 251, 250);
+
+  --color-text: rgb(54, 54, 54);
+  --color-light-text: rgb(195, 208, 216);
+  --color-white-text: rgb(255, 255, 255);
+
+  --color-primary: rgb(58, 83, 116);
+  --color-light-primary: rgb(149, 164, 185);
+  --color-dark-primary: rgb(40, 64, 96);
+
+  --color-secondary: rgb(225, 131, 55);
+  --color-light-secondary: rgb(253, 230, 214);
+  --color-dark-secondary: rgb(225, 122, 43);
+
+
+  // FONTS
+  --default-font-size: 16px;
+  --text-font-size: 14px;
+  --header-font-size: 30px;
+
+  --font-bauhouse: "BauhausC"
+  --font-helvetica: "HelveticaNeueCyr"
+}
+
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  overflow: auto;
+  font-family: var(--font-helvetica);
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+input {
+  margin: 0;
+}
+
+button {
+  outline: none;
+  border: none;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  width: 100%;
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+  margin-right: auto;
+  margin-left: auto;
+  @media (min-width: 57.6rem) {
+    max-width: 54rem;
+  }
+  @media (min-width: 76.8rem) {
+    max-width: 71rem;
+  }
+  @media (min-width: 99.2rem) {
+    max-width: 93rem;
+  }
+  @media (min-width: 120rem) {
+    max-width: 118rem;
+  }
+  @media (min-width: 140rem) {
+    max-width: 138rem;
+  }
+}
+

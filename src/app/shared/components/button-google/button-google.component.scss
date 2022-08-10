@@ -1,10 +1,17 @@
 .icon-google {
-  width: 42px;
-  height: 42px;
+  width: 4.2rem;
+  height: 4.2rem;
   border-radius: 50%;
 
   background-image: url("../../../../assets/icons/socials/google.svg");
   background-size: cover;
   background-repeat: repeat;
   background-position: center;
+
+  cursor: pointer;
+  transition: transform 0.5s ease-out;
+
+  &:hover {
+    transform: scale(1.15);
+  }
 }
