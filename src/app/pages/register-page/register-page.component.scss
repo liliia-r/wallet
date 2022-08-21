@@ -1,13 +1,11 @@
 @font-face {
   font-family: "BauhausC";
-  src: url("../../../assets/fonts/bauhouse/BauhausC_Medium_Bold.ttf")
-    format("woff2");
+  src: url("../../../assets/fonts/bauhouse/BauhausC_Medium_Bold.ttf") format("woff2");
 }
 
 @font-face {
   font-family: "HelveticaNeueCyr";
-  src: url("../../../assets/fonts/HelveticaNeueCyr/HelveticaNeueCyr-Roman.ttf")
-    format("woff2");
+  src: url("../../../assets/fonts/HelveticaNeueCyr/HelveticaNeueCyr-Roman.ttf") format("woff2");
 }
 
 .register-page.container {
@@ -62,6 +60,22 @@
       font-size: 2rem;
       padding-left: 5.4rem;
       opacity: 0.5;
+
+      &.ng-invalid.ng-touched {
+        border: 1px solid red;
+      }
+
+      &.ng-invalid.ng-dirty {
+        border: 1px solid red;
+      }
+
+      &.ng-valid.ng-touched {
+        border: 1px solid green;
+      }
+
+      &.ng-valid.ng-dirty {
+        border: 1px solid green;
+      }
     }
 
     &-wrapper {
@@ -83,7 +97,15 @@
   }
 
   &__validation {
-    display: none;
+    text-align: left;
+    font-size: 1.4rem;
+    padding-top: 2px;
+    color: red;
+    font-family: "HelveticaNeueCyr";
+
+    small {
+      display: block;
+    }
   }
 
   &__submit {
@@ -100,7 +122,6 @@
 
     &:disabled {
       background-color: rgba(112, 124, 130, 0.3);
-      // box-shadow: 2px 3px 3px var(--color-dark-background);
       cursor: not-allowed;
     }
   }

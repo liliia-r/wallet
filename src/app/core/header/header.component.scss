@@ -1,0 +1,106 @@
+.header {
+  display: flex;
+  width: 100%;
+  height: 4rem;
+  box-shadow: 2px 3px 3px rgba(1, 1, 0, 0.12);
+  background-color: #284060;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+
+  &-logo__wrapper {
+    display: flex;
+
+    img {
+      margin-right: 14px;
+    }
+  }
+
+  &__logo {
+    width: 24px;
+    height: 24px;
+    background: url("../../../assets/icons/header/logo.svg") no-repeat;
+    margin-right: 8px;
+    cursor: pointer;
+  }
+
+  &__title {
+    font-family: "BauhausC";
+    color: #758397;
+    font-size: 2.4rem;
+    font-weight: 700;
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    min-width: 13rem;
+  }
+
+  &__user {
+    color: #6b7d83;
+    font-family: "HelveticaNeueCyr";
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-right: 2rem;
+  }
+
+  &__logout-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__logout-icon {
+    width: 1.6rem;
+    height: 1.6rem;
+    background: url("../../../assets/icons/header/logout.svg") no-repeat;
+    background-position-x: right;
+    margin-right: 7px;
+  }
+
+  &__logout-text {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    height: 8rem;
+    background-color: #ffffff;
+    padding: 0 3rem;
+    margin-bottom: 1.5rem;
+
+    &__logo {
+      margin-right: 1.4rem;
+    }
+
+    &__nav {
+      min-width: 19rem;
+    }
+
+    &__logout-wrapper {
+      display: flex;
+      cursor: pointer;
+      position: relative;
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        height: 100%;
+        width: 1px;
+        top: 0;
+        left: -20px;
+        background: #6b7d83;
+      }
+    }
+
+    &__logout-text {
+      display: block;
+      color: #6b7d83;
+      font-family: "HelveticaNeueCyr";
+      font-size: 1.5rem;
+      font-weight: 400;
+    }
+  }
+}

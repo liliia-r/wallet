@@ -1,5 +1,14 @@
 import { Injectable } from '@angular/core';
-import { LocalStoreService } from '../localStore/local-store.service';
+import {
+  Auth,
+  GoogleAuthProvider,
+  FacebookAuthProvider,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  signOut,
+} from '@angular/fire/auth';
+import { LoginData } from './../../models/login.model';
+// import { FacebookAuthProvider } from 'firebase/auth';
 
 @Injectable({
   providedIn: 'root',
@@ -7,13 +16,25 @@ import { LocalStoreService } from '../localStore/local-store.service';
 export class LoginService {
   isLoggedIn = false;
 
-  constructor(private localStoreService: LocalStoreService) {}
+  constructor(private auth: Auth) {}
 
-  login({ name }: { name: string }) {
-    const user = {
-      id: 1,
-      name,
-    };
-    this.localStoreService.saveState('USER', user);
+  login({ email, password }: LoginData) {
+    this.isLoggedIn = true
+    return signInWithEmailAndPassword(this.auth, email, password);
+  }
+
+  loginWithGoogle() {
+    this.isLoggedIn = true
+    return signInWithPopup(this.auth, new GoogleAuthProvider());
+  }
+
+  loginWithFacebook() {
+    this.isLoggedIn = true
+    return signInWithPopup(this.auth, new FacebookAuthProvider())
+  }
+
+  logout() {
+    this.isLoggedIn = false
+    return signOut(this.auth);
   }
 }

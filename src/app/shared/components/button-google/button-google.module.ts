@@ -7,4 +7,5 @@ import { ButtonGoogleComponent } from './button-google.component';
   imports: [CommonModule],
   exports: [ButtonGoogleComponent],
 })
-export class ButtonGoogleModule {}
+export class ButtonGoogleModule {
+}

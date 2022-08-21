@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { LoginService } from './../../services/login/login.service';
 
 @Component({
   selector: 'app-button-fb',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ButtonFbComponent implements OnInit {
 
-  constructor() { }
+  constructor(private loginService: LoginService, private router: Router) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  loginWithFacebook() {
+    this.loginService
+      .loginWithFacebook()
+      .then(() => this.router.navigate(['/home']))
+      .catch((e) => console.log(e.message));
   }
 
 }

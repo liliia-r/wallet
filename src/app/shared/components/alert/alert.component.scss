@@ -1,0 +1,44 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vw;
+  background: rgba($color: #000000, $alpha: 0.75);
+  z-index: 50;
+}
+
+.alert-box {
+  position: fixed;
+  top: 30vh;
+  left: 20vw;
+  width: 60vw;
+  padding: 25px;
+  z-index: 100;
+  background: white;
+  box-shadow: 0 2px 8px rgba($color: #000000, $alpha: 0.26);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  p {
+    font-size: 3rem;
+    color: rgba($color: #000000, $alpha: 0.4);
+  }
+}
+
+.alert-box-actions {
+  text-align: right;
+}
+
+.btn {
+  width: 15rem;
+  height: 4rem;
+  background-color: var(--color-secondary);
+  border-radius: 5px;
+  font-family: "HelveticaNeueCyr";
+  font-size: 1.5rem;
+  letter-spacing: 1.5px;
+  color: var(--color-white-text);
+  box-shadow: 2px 3px 3px rgba(225, 131, 55, 0.25);
+}

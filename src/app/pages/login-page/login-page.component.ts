@@ -1,26 +1,63 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { LoginService } from '../../shared/services/login/login.service';
-import { LocalStoreService } from '../../shared/services/localStore/local-store.service';
+import { FormBuilder, Validators } from '@angular/forms';
+import { throwError } from 'rxjs';
+import { FirebaseError } from 'firebase/app';
 
+import { LoginService } from '../../shared/services/login/login.service';
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.scss'],
 })
 export class LoginPageComponent implements OnInit {
-  constructor(
-    private localStoreService: LocalStoreService,
-    private router: Router
-  ) {}
+  errorMessage!: string | null
 
-  ngOnInit(): void {
-    if (this.localStoreService.loadState('USER')) {
-      this.router.navigate(['/home']);
-    }
-  }
+  loginForm = this.fb.group({
+    email: ["", [Validators.required, Validators.email]],
+    password: ["", [Validators.required]]
+  })
+
+  constructor(
+    private router: Router,
+    private fb: FormBuilder,
+    private loginService: LoginService
+  ) { }
+
+  ngOnInit(): void { }
 
   register() {
     this.router.navigate(['/register']);
+  }
+
+  onLoginFormSubmit() {
+    this.loginService
+      .login(this.loginForm.value)
+      .then(() => this.router.navigate(['/home']))
+      .catch((error) => this.handleError(error));
+
+    this.loginForm.reset()
+  }
+
+  private handleError(errorRes: FirebaseError) {
+    if (!errorRes.code || !errorRes.code) {
+      return throwError(this.errorMessage = 'An unknown error occurred!');
+    }
+    switch (errorRes.code) {
+      case 'auth/wrong-password':
+        this.errorMessage = 'This password is not correct.';
+        break;
+      case 'auth/user-not-found':
+        this.errorMessage = 'This email does not exist.';
+        break;
+      default:
+        this.errorMessage = 'An unknown error occurred!'
+
+    }
+    return throwError(this.errorMessage);
+  }
+
+  onHandleError() {
+    this.errorMessage = null
   }
 }

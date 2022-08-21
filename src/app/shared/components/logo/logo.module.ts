@@ -5,8 +5,6 @@ import { LogoComponent } from './logo.component';
 @NgModule({
   declarations: [LogoComponent],
   imports: [CommonModule],
-  exports: [
-    LogoComponent
-  ]
+  exports: [LogoComponent]
 })
 export class LogoModule { }
