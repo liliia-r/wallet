@@ -1,0 +1,56 @@
+<div class="backdrop" (click)="onClose()"></div>
+<div class="alert-box">
+  <div class="form__header-container">
+    <h2 class="form__header-title">Add transaction</h2>
+  </div>
+
+  <form class="form" [formGroup]="transactionForm" (ngSubmit)="onTransactionFormSubmit()">
+    <fieldset class="form__main">
+      <div class="form__radio-container">
+        <div class="form__radio form__radio-income">
+          <input formControlName="type" type="radio" id="income" class="form__income" value="income">
+          <label for="income">Income</label>
+        </div>
+
+        <div class="form__radio form__radio-expense">
+          <input formControlName="type" type="radio" id="expense" class="form__expense" value="expense">
+          <label for="expense">Expense</label>
+        </div>
+      </div>
+
+      <div class="form__category-container" *ngIf="transactionType?.value === 'expense'">
+        <select class="form__select" id="" formControlName="category">
+          <option selected hidden value="category">Category</option>
+          <option *ngFor="let expense of expenses" [value]="expense.value"> {{expense.value}}
+          </option>
+        </select>
+      </div>
+
+      <div class="form__category-container" *ngIf="transactionType?.value === 'income'">
+        <select class="form__select" id="" formControlName="category">
+          <option selected hidden value="category">Category</option>
+          <option *ngFor="let income of incomes" [value]="income.value"> {{income.value}}
+          </option>
+        </select>
+      </div>
+
+      <div class="form__sum-date">
+        <div class="form__sum-container">
+          <input type="number" min="0.00" max="10000.00" step="0.01" formControlName="sum" />
+        </div>
+
+        <div class="form__date-container">
+          <input type="date" name="" id="" formControlName="date">
+        </div>
+      </div>
+
+      <div class="form__comment-container">
+        <p class="form__comment-title">Comment</p>
+        <textarea name="" id="" cols="30" rows="5" formControlName="comment"></textarea>
+      </div>
+    </fieldset>
+  </form>
+
+  <button class="btn-add" (click)="onTransactionFormSubmit()">Save</button>
+
+</div>

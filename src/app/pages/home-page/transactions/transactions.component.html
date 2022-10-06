@@ -1,0 +1,35 @@
+<div class="transactions">
+  <div class="transactions-table" *ngIf="transactions.length">
+    <table>
+      <thead>
+        <tr>
+          <td>Date</td>
+          <td>Type</td>
+          <td>Category</td>
+          <td>Comment</td>
+          <td>Sum</td>
+          <td>Edit/Delete transaction</td>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let transaction of transactions, let id = index">
+          <td> {{transaction.date}} </td>
+          <td> {{transaction.type}} </td>
+          <td> {{transaction.category}} </td>
+          <td> {{transaction.comment}} </td>
+          <td [ngStyle]="{'color': transaction.type === 'expense' ? '#e18337' : '#3a5374'}"> {{transaction.sum}} </td>
+          <td>
+            <button class="btn-edit" (click)="onEditTransaction(id)"></button>
+            <button class="btn-delete" (click)="onDeleteTransaction(id)"></button>
+          </td>
+
+          <!-- <app-add-transaction *ngIf="openEditingTransaction"></app-add-transaction> -->
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <p *ngIf="!transactions.length">No transactions yet</p>
+</div>

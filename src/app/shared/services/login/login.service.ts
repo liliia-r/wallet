@@ -8,7 +8,6 @@ import {
   signOut,
 } from '@angular/fire/auth';
 import { LoginData } from './../../models/login.model';
-// import { FacebookAuthProvider } from 'firebase/auth';
 
 @Injectable({
   providedIn: 'root',

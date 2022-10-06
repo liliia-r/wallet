@@ -7,7 +7,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class AlertComponent implements OnInit {
   @Input() message!: string
-  @Output() close = new EventEmitter<void>()
+  @Output() closeModal = new EventEmitter<void>()
 
   constructor() { }
 
@@ -15,7 +15,7 @@ export class AlertComponent implements OnInit {
   }
 
   onClose() {
-    this.close.emit()
+    this.closeModal.emit()
   }
 
 }

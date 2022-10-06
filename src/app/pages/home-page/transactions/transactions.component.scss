@@ -1,0 +1,96 @@
+:host {
+  width: 70%;
+}
+
+.transactions {
+  &-table {
+    width: 100%;
+  }
+
+  table {
+    display: flex;
+    flex-direction: column;
+  }
+
+  thead {
+    tr {
+      display: flex;
+      flex-direction: row;
+      background: white;
+      height: 7rem;
+    }
+  }
+
+  tbody {
+    height: 70vh;
+    overflow-y: auto;
+
+    tr {
+      display: flex;
+      flex-direction: row;
+      height: 6rem;
+
+      &:nth-of-type(2n) {
+        background-color: white;
+      }
+    }
+
+    td {
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+  }
+
+  td {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+    font-weight: 700;
+    font-family: 'HelveticaNeueCyr', sans-serif;
+    color: #282828;
+
+    &:nth-child(1) {
+      width: 15%;
+    }
+
+    &:nth-child(2) {
+      width: 15%;
+    }
+
+    &:nth-child(3) {
+      width: 15%;
+    }
+
+    &:nth-child(4) {
+      width: 20%;
+    }
+
+    &:nth-child(5) {
+      width: 20%;
+    }
+
+    &:nth-child(6) {
+      width: 15%;
+      justify-content: space-around;
+    }
+  }
+}
+
+.btn-edit,
+.btn-delete {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: transparent;
+}
+
+.btn-edit {
+  background-image: url('../../../../assets/icons/edit.png');
+}
+
+.btn-delete {
+  background-image: url('../../../../assets/icons/delete.png');
+}
