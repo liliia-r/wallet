@@ -1,5 +1,4 @@
-import { TransactionsService } from './../../shared/services/transactions/transactions.service';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-home-page',
@@ -7,5 +6,5 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home-page.component.scss'],
 })
 export class HomePageComponent {
-  constructor(private transactionsService: TransactionsService) {}
+  constructor() {}
 }

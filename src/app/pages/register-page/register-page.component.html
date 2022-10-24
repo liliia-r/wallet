@@ -10,29 +10,18 @@
         <app-logo></app-logo>
 
         <h1 class="register-page__title">Wallet</h1>
-    </div>
+      </div>
 
-    <app-alert
-      [message]="errorMessage"
-      *ngIf="errorMessage"
-      (close)="onHandleError()"></app-alert>
+      <app-alert [message]="errorMessage" *ngIf="errorMessage" (closeModal)="onHandleError()"></app-alert>
 
-      <form
-        class="register"
-        [formGroup]="registerForm"
-        (ngSubmit)="submitRegistration()"
-      >
+      <form class="register" [formGroup]="registerForm" (ngSubmit)="submitRegistration()">
         <div class="register__control">
           <div class="register__control-wrapper">
             <div class="register__control-icon control-icon__email"></div>
-            <input
-              type="email"
-              id="email"
-              formControlName="email"
-              placeholder="Enter email"
-            />
+            <input type="email" id="email" formControlName="email" placeholder="Enter email" />
           </div>
-          <div class="register__validation" *ngIf="controlEmail?.invalid && (controlEmail?.dirty || controlEmail?.touched)">
+          <div class="register__validation"
+            *ngIf="controlEmail?.invalid && (controlEmail?.dirty || controlEmail?.touched)">
             <small *ngIf="controlEmail?.errors?.['required']">Email is required</small>
             <small *ngIf="controlEmail?.errors?.['email']">Provide correct e-mail</small>
           </div>
@@ -41,33 +30,25 @@
         <div class="register__control">
           <div class="register__control-wrapper">
             <div class="register__control-icon control-icon__password"></div>
-            <input
-              type="password"
-              id="password"
-              formControlName="password"
-              placeholder="Enter password"
-            />
+            <input type="password" id="password" formControlName="password" placeholder="Enter password" />
           </div>
-          <div class="register__validation" *ngIf="controlPassword?.invalid && (controlPassword?.dirty || controlPassword?.touched)">
+          <div class="register__validation"
+            *ngIf="controlPassword?.invalid && (controlPassword?.dirty || controlPassword?.touched)">
             <small *ngIf="controlPassword?.errors?.['required']">Password is required</small>
             <small *ngIf="controlPassword?.errors?.['min']">Password should be at least 5 symbols</small>
-            <small *ngIf="controlPassword?.errors?.['pattern']">Provide should contain at least one number, one big letter, one small letter</small>
+            <small *ngIf="controlPassword?.errors?.['pattern']">Provide should contain at least one number, one big
+              letter, one small letter</small>
           </div>
         </div>
 
         <div class="register__control">
           <div class="register__control-wrapper">
-            <div
-              class="register__control-icon control-icon__confirm-password"
-            ></div>
-            <input
-              type="password"
-              id="confirm-password"
-              formControlName="confirmPassword"
-              placeholder="Confirm password"
-            />
+            <div class="register__control-icon control-icon__confirm-password"></div>
+            <input type="password" id="confirm-password" formControlName="confirmPassword"
+              placeholder="Confirm password" />
           </div>
-          <div class="register__validation" *ngIf="passwordMatchError && (controlConfirmPassword?.dirty || controlConfirmPassword?.touched)">
+          <div class="register__validation"
+            *ngIf="passwordMatchError && (controlConfirmPassword?.dirty || controlConfirmPassword?.touched)">
             <small *ngIf="controlConfirmPassword?.errors?.['required']">You should confirm password</small>
             <small *ngIf="passwordMatchError">Password does not match</small>
           </div>
@@ -76,16 +57,13 @@
         <div class="register__control">
           <div class="register__control-wrapper">
             <div class="register__control-icon control-icon__name"></div>
-            <input
-              type="text"
-              id="name"
-              formControlName="name"
-              placeholder="Enter your name"
-            />
+            <input type="text" id="name" formControlName="name" placeholder="Enter your name" />
           </div>
-          <div class="register__validation" *ngIf="controlName?.invalid && (controlName?.dirty || controlName?.touched)">
+          <div class="register__validation"
+            *ngIf="controlName?.invalid && (controlName?.dirty || controlName?.touched)">
             <small *ngIf="controlName?.errors?.['required']">Name is required</small>
-            <small *ngIf="controlName?.errors?.['minlength']"> Name must be at least {{controlName?.errors?.['minlength'].requiredLength}} characters long.</small>
+            <small *ngIf="controlName?.errors?.['minlength']"> Name must be at least
+              {{controlName?.errors?.['minlength'].requiredLength}} characters long.</small>
           </div>
         </div>
 
@@ -105,4 +83,3 @@
     <h2 class="register__name register__name2">Finance App</h2>
   </div>
 </div>
-

@@ -1,6 +1,5 @@
+import { Component } from '@angular/core';
 import { TransactionsService } from './../../../shared/services/transactions/transactions.service';
-import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
-import { NumberSymbol } from '@angular/common';
 
 @Component({
   selector: 'app-navigation',

@@ -1,13 +1,15 @@
-import { Currency } from './../../models/currency.model';
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, tap } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+import { Currency } from './../../models/currency.model';
+import { apiUrl } from '../../constants/constants';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CurrencyService {
-  private apiUrl = 'https://api.privatbank.ua/p24api/pubinfo?exchange&json&coursid=5';
+  private apiUrl = apiUrl;
 
   constructor(private http: HttpClient) {}
 

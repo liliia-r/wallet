@@ -1,7 +1,8 @@
-import { Currency } from './../../../shared/models/currency.model';
-import { Subscription } from 'rxjs';
-import { CurrencyService } from './../../../shared/services/currency/currency.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
+
+import { Currency } from './../../../shared/models/currency.model';
+import { CurrencyService } from './../../../shared/services/currency/currency.service';
 
 @Component({
   selector: 'app-currency',

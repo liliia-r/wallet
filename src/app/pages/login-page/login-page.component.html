@@ -12,23 +12,14 @@
         <h1 class="login-page__title">Wallet</h1>
       </div>
 
-      <app-alert
-        [message]="errorMessage"
-        *ngIf="errorMessage"
-        (close)="onHandleError()"></app-alert>
+      <app-alert [message]="errorMessage" *ngIf="errorMessage" (closeModal)="onHandleError()"></app-alert>
 
-      <form class="login"
-        [formGroup]="loginForm"
-        (ngSubmit)="onLoginFormSubmit()">
+      <form class="login" [formGroup]="loginForm" (ngSubmit)="onLoginFormSubmit()">
 
         <div class="login__control">
           <div class="login__control-wrapper">
             <div class="login__control-icon control-icon__email"></div>
-            <input
-              type="email"
-              id="email"
-              formControlName="email"
-              placeholder="Enter email" />
+            <input type="email" id="email" formControlName="email" placeholder="Enter email" />
           </div>
           <div class="login__validation">
             <small>Email is required</small>
@@ -39,11 +30,7 @@
         <div class="login__control">
           <div class="login__control-wrapper">
             <div class="login__control-icon control-icon__password"></div>
-            <input
-              type="password"
-              id="password"
-              formControlName="password"
-              placeholder="Enter password" />
+            <input type="password" id="password" formControlName="password" placeholder="Enter password" />
           </div>
           <div class="login__validation">
             <small>Password is required</small>
@@ -51,18 +38,10 @@
           </div>
         </div>
 
-        <button
-          type="submit"
-          class="login__submit"
-          [disabled]="!loginForm.valid"
-          >Enter</button>
+        <button type="submit" class="login__submit" [disabled]="!loginForm.valid">Enter</button>
       </form>
 
-      <button
-        type="button"
-        class="register__button"
-        (click)="register()"
-        >Registration</button>
+      <button type="button" class="register__button" (click)="register()">Registration</button>
 
       <div class="login__socials">
         <app-button-google></app-button-google>
