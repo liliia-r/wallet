@@ -1,4 +1,16 @@
-<!-- <p> {{
-  currencyService.getCurrencies() | async
-  }} </p> -->
-  <p>ghvj</p>
+<div class="currency__wrapper">
+
+  <div class="currency__header">
+    <p class="currency__header-text">Currency</p>
+    <p class="currency__header-text">Buy</p>
+    <p class="currency__header-text">Sell</p>
+  </div>
+
+  <ul>
+    <li class="currency__data" *ngFor="let currency of currencies">
+      <p class="currency__item"> {{currency.ccy}} </p>
+      <p class="currency__item"> {{currency.buy | number: '1.2-2'}} </p>
+      <p class="currency__item"> {{currency.sale | number: '1.2-2'}} </p>
+    </li>
+  </ul>
+</div>

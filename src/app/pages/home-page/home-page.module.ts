@@ -9,9 +9,10 @@ import { HomePageRoutingModule } from './home-page-routing.module';
 import { CoreModule } from './../../core/core.module';
 import { NavigationComponent } from './navigation/navigation.component';
 import { CurrencyComponent } from './currency/currency.component';
-import { AddTransactionComponent } from './add-transaction/add-transaction.component';
+import { AddTransactionComponent } from './transactions/add-transaction/add-transaction.component';
 import { TransactionsComponent } from './transactions/transactions.component';
 import { TransactionItemComponent } from './transactions/transaction-item/transaction-item.component';
+import { StatisticComponent } from './statistic/statistic.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { TransactionItemComponent } from './transactions/transaction-item/transa
     AddTransactionComponent,
     TransactionsComponent,
     TransactionItemComponent,
+    StatisticComponent,
   ],
   imports: [CommonModule, HomePageRoutingModule, CoreModule, FormsModule, ReactiveFormsModule],
   exports: [HomePageComponent],

@@ -5,6 +5,7 @@ export class Transaction {
   sum: number;
   date: Date | any;
   comment: string;
+  color?: string;
 
   constructor(type: string, category: string, sum: number, date: any, comment: string) {
     this.type = type;

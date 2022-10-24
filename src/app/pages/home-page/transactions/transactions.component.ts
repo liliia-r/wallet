@@ -8,40 +8,36 @@ import { Subscription } from 'rxjs';
   templateUrl: './transactions.component.html',
   styleUrls: ['./transactions.component.scss'],
 })
-export class TransactionsComponent implements OnInit, OnDestroy {
-  transactions: Transaction[];
+export class TransactionsComponent {
+  transactions = this.transactionsService.transactions$;
   subscription: Subscription;
   openEditingTransaction: boolean;
+  checkedId: number;
+  openModal: boolean = false;
 
   @Output() editTransaction = new EventEmitter<number | undefined>();
 
   constructor(private transactionsService: TransactionsService) {}
 
-  ngOnInit(): void {
-    this.subscription = this.transactionsService.transactionsChanges.subscribe(
-      (transactions: Transaction[]) => {
-        this.transactions = transactions;
-      }
-    );
-    this.transactions = this.transactionsService.getTransactions();
-    console.log(this.transactions);
-  }
-
   onEditTransaction(id: number) {
-    console.log('edit', id);
-    this.editTransaction.emit(id);
+    this.checkedId = id;
     this.transactionsService.isEditMode = true;
     this.transactionsService.isModalOpen = true;
     this.openEditingTransaction = this.transactionsService.isModalOpen;
-    console.log(this.openEditingTransaction);
   }
 
   onDeleteTransaction(id: number) {
-    console.log('delete');
     this.transactionsService.deleteTransaction(id);
   }
 
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+  onModalClose() {
+    this.transactionsService.isModalOpen = false;
+    this.openEditingTransaction = this.transactionsService.isModalOpen;
+    this.openModal = this.transactionsService.isModalOpen;
+  }
+
+  addTransactionModal() {
+    this.transactionsService.isModalOpen = true;
+    this.openModal = this.transactionsService.isModalOpen;
   }
 }

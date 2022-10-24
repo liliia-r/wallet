@@ -6,19 +6,6 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss'],
 })
-export class HomePageComponent implements OnInit {
-  openModal: boolean;
+export class HomePageComponent {
   constructor(private transactionsService: TransactionsService) {}
-
-  ngOnInit(): void {}
-
-  addTransaction() {
-    this.transactionsService.isModalOpen = true;
-    this.openModal = this.transactionsService.isModalOpen;
-  }
-
-  onModalClose() {
-    this.transactionsService.isModalOpen = false;
-    this.openModal = this.transactionsService.isModalOpen;
-  }
 }

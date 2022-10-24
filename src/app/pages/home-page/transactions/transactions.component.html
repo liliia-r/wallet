@@ -1,4 +1,5 @@
-<div class="transactions">
+<div class="transactions" *ngIf="transactions | async; let transactions">
+
   <div class="transactions-table" *ngIf="transactions.length">
     <table>
       <thead>
@@ -24,7 +25,8 @@
             <button class="btn-delete" (click)="onDeleteTransaction(id)"></button>
           </td>
 
-          <!-- <app-add-transaction *ngIf="openEditingTransaction"></app-add-transaction> -->
+          <app-add-transaction *ngIf="openEditingTransaction" [checkedId]="checkedId"
+            (closeTransactionModal)="onModalClose()"></app-add-transaction>
         </tr>
       </tbody>
     </table>
@@ -32,4 +34,10 @@
   </div>
 
   <p *ngIf="!transactions.length">No transactions yet</p>
+</div>
+
+<button class="add-button" (click)="addTransactionModal()">+</button>
+
+<div class="add-transaction">
+  <app-add-transaction *ngIf="openModal" (closeTransactionModal)="onModalClose()"></app-add-transaction>
 </div>

@@ -14,6 +14,7 @@ import { LoginPageModule } from './pages/login-page/login-page.module';
 import { HomePageModule } from './pages/home-page/home-page.module';
 import { CoreModule } from './core/core.module';
 import { RegisterPageModule } from './pages/register-page/register-page.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -26,6 +27,7 @@ import { RegisterPageModule } from './pages/register-page/register-page.module';
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideAuth(() => getAuth()),
     HttpClientModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

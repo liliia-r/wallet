@@ -1,11 +1,12 @@
 <app-header></app-header>
 
 <div class="home-page__wrapper">
-  <app-navigation></app-navigation>
 
-  <app-transactions></app-transactions>
+  <div class="sidebar">
+    <app-navigation></app-navigation>
 
-  <app-add-transaction *ngIf="openModal" (closeTransactionModal)="onModalClose()"></app-add-transaction>
+    <app-currency></app-currency>
+  </div>
 
-  <button class="add-button" (click)="addTransaction()">+</button>
+  <router-outlet></router-outlet>
 </div>

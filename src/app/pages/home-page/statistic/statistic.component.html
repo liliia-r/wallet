@@ -1,0 +1,29 @@
+<div class="statistic">
+  <h3 class="statistic__title">Statistic</h3>
+
+
+  <!-- <div class="statistic__content"> -->
+  <!-- <div *ngIf="arrayExpenseCategory.length; else displayExpense"> -->
+  <div class="chart-container" style="position: relative; height:70%; width:100%">
+    <canvas id="myChart"></canvas>
+
+
+  </div>
+  <!-- </div> -->
+
+
+  <div class="statistic__summary">
+    <div class="statistic__income">
+      <h4 class="statistic__subtitle">Total income: </h4>
+      <p class="statistic__sum"> {{totalIncomeSum}} </p>
+    </div>
+    <div class="statistic__expense">
+      <h4 class="statistic__subtitle">Total expense: </h4>
+      <p class="statistic__sum"> {{totalExpenseSum}} </p>
+    </div>
+  </div>
+  <!-- </div> -->
+  <!-- <ng-template #noDataToDisplay>
+    <div class="static__text">No data to display</div>
+  </ng-template> -->
+</div>

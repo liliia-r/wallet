@@ -4,6 +4,17 @@
   justify-content: space-between;
 }
 
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 22%;
+}
+
+.add-transaction {
+  position: fixed;
+}
+
 .add-button {
   width: 5.4rem;
   height: 5.4rem;
@@ -31,7 +42,7 @@
   .home-page__wrapper {
     height: 90vh;
     background-color: #efeff1;
-    padding: 4rem 10rem;
+    padding: 6rem 10rem;
   }
 
   .add-button {
