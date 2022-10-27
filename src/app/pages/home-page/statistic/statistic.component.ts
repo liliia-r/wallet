@@ -69,8 +69,6 @@ export class StatisticComponent implements OnInit, OnDestroy {
       this.total = this.arrayExpenseTypes.reduce((prev: Transaction, next: Transaction) => {
         return prev.sum + next.sum;
       });
-      console.log(this.arrayExpenseTypes);
-      console.log(this.arrayExpenseCategory);
     }
 
     this.createChart();

@@ -6,8 +6,14 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
+  userName: string | null;
+
   constructor(private loginService: LoginService) {}
+
+  ngOnInit(): void {
+    this.userName = localStorage.getItem('userName');
+  }
 
   onLogout() {
     this.loginService.logout();

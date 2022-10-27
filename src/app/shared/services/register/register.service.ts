@@ -16,6 +16,8 @@ export class RegisterService {
   register({ email, password, name }: RegisterData) {
     localStorage.setItem('userName', name);
     this.isRegistrationSuccessful = true;
-    return createUserWithEmailAndPassword(this.auth, email, password);
+    return createUserWithEmailAndPassword(this.auth, email, password).then(result => {
+      console.log(result);
+    });
   }
 }
