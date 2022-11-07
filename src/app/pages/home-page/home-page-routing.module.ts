@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthGuard } from 'src/app/shared/services/authGuard/auth.guard';
+import { AuthGuard } from '@services/authGuard/auth.guard';
 import { HomePageComponent } from './home-page.component';
 import { TransactionsComponent } from './transactions/transactions.component';
 import { StatisticComponent } from './statistic/statistic.component';
@@ -11,6 +11,11 @@ const routes: Routes = [
     component: HomePageComponent,
     canActivate: [AuthGuard],
     children: [
+      {
+        path: '',
+        redirectTo: 'transactions',
+        pathMatch: 'full',
+      },
       {
         path: 'transactions',
         component: TransactionsComponent,

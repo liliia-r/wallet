@@ -1,5 +1,5 @@
-import { LoginService } from './../../shared/services/login/login.service';
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '@services/auth/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -9,13 +9,13 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
   userName: string | null;
 
-  constructor(private loginService: LoginService) {}
+  constructor(private authService: AuthService) {}
 
   ngOnInit(): void {
     this.userName = localStorage.getItem('userName');
   }
 
   onLogout() {
-    this.loginService.logout();
+    this.authService.logout();
   }
 }

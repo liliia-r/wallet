@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 
-import { Currency } from './../../../shared/models/currency.model';
-import { CurrencyService } from './../../../shared/services/currency/currency.service';
+import { Currency } from '@models/currency.model';
+import { CurrencyService } from '@services/currency/currency.service';
 
 @Component({
   selector: 'app-currency',
@@ -16,12 +16,12 @@ export class CurrencyComponent implements OnInit, OnDestroy {
   constructor(public currencyService: CurrencyService) {}
 
   ngOnInit(): void {
-    this.currencySubscription = this.currencyService
-      .getCurrencies()
-      .subscribe(currencies => (this.currencies = currencies));
+    // this.currencySubscription = this.currencyService
+    //   .getCurrencies()
+    //   .subscribe(currencies => (this.currencies = currencies));
   }
 
   ngOnDestroy(): void {
-    this.currencySubscription.unsubscribe();
+    // this.currencySubscription.unsubscribe();
   }
 }

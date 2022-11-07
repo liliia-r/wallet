@@ -18,7 +18,7 @@
     tr {
       display: flex;
       flex-direction: row;
-      background: white;
+      background: #fff;
       height: 7rem;
     }
   }
@@ -33,7 +33,7 @@
       height: 6rem;
 
       &:nth-of-type(2n) {
-        background-color: white;
+        background-color: #fff;
       }
     }
 

@@ -37,38 +37,27 @@
 }
 
 .item-home {
-  background: url('../../../../assets/icons/navigation/home.png') no-repeat;
-  background-size: contain;
-  background-position: center;
+  background: no-repeat center / contain url('../../../../assets/icons/navigation/home.png');
 
   &--active {
-    background: url('../../../../assets/icons/navigation/homeWhite.png') no-repeat;
-    background-size: contain;
-    background-position: center;
+    background: no-repeat center / contain url('../../../../assets/icons/navigation/homeWhite.png');
   }
 }
 
 .item-graph {
-  background: url('../../../../assets/icons/navigation/graph.png') no-repeat;
-  background-size: contain;
-  background-position: center;
+  background: no-repeat center / contain url('../../../../assets/icons/navigation/graph.png');
 
   &--active {
-    background: url('../../../../assets/icons/navigation/graphWhite.png') no-repeat;
-    background-size: contain;
-    background-position: center;
+    background: no-repeat center / contain url('../../../../assets/icons/navigation/graphWhite.png');
   }
 }
 
 .item-dollar {
-  background: url('../../../../assets/icons/navigation/dollar.png') no-repeat;
-  background-size: contain;
-  background-position: center;
+  background: no-repeat center / contain url('../../../../assets/icons/navigation/dollar.png');
 
   &--active {
-    background: url('../../../../assets/icons/navigation/dollarWhite.png') no-repeat;
-    background-size: contain;
-    background-position: center;
+    background: no-repeat center / contain
+      url('../../../../assets/icons/navigation/dollarWhite.png');
   }
 }
 
@@ -78,7 +67,7 @@
   height: 8rem;
   border-radius: 5px;
   margin: 0 auto 2rem;
-  color: white;
+  color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -213,19 +202,17 @@
     }
 
     .item-home {
-      background: url('../../../../assets/icons/navigation/homeWhite.png') no-repeat;
-      background-size: contain;
-      background-position: center;
+      background: no-repeat center / contain
+        url('../../../../assets/icons/navigation/homeWhite.png');
     }
 
     .item-graph {
-      background: url('../../../../assets/icons/navigation/graphWhite.png') no-repeat;
-      background-size: contain;
-      background-position: center;
+      background: no-repeat center / contain
+        url('../../../../assets/icons/navigation/graphWhite.png');
     }
 
     &__link {
-      color: white;
+      color: #fff;
       font-family: 'HelveticaNeueCyr';
       font-size: 1.8rem;
       font-weight: 700;
@@ -245,7 +232,7 @@
       align-items: center;
 
       p {
-        color: white;
+        color: #fff;
         font-family: 'HelveticaNeueCyr';
         font-size: 1.8rem;
         font-weight: 700;

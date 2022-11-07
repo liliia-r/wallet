@@ -4,7 +4,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { throwError } from 'rxjs';
 import { FirebaseError } from 'firebase/app';
 
-import { LoginService } from '../../shared/services/login/login.service';
+import { AuthService } from '@services/auth/auth.service';
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
@@ -18,18 +18,14 @@ export class LoginPageComponent {
     password: ['', [Validators.required]],
   });
 
-  constructor(
-    private router: Router,
-    private fb: FormBuilder,
-    private loginService: LoginService
-  ) {}
+  constructor(private router: Router, private fb: FormBuilder, private authService: AuthService) {}
 
   register() {
     this.router.navigate(['/register']);
   }
 
   onLoginFormSubmit() {
-    this.loginService
+    this.authService
       .login(this.loginForm.value)
       .then(() => this.router.navigate(['/home']))
       .catch(error => this.handleError(error));

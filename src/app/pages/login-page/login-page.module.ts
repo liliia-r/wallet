@@ -5,11 +5,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { LoginPageComponent } from './login-page.component';
 
-import { ButtonModule } from '../../shared/components/button/button.module';
-import { LogoModule } from '../../shared/components/logo/logo.module';
-import { ButtonGoogleModule } from '../../shared/components/button-google/button-google.module';
-import { ButtonFbModule } from '../../shared/components/button-fb/button-fb.module';
-import { AlertModule } from './../../shared/components/alert/alert.module';
+import { ButtonModule } from '@shared/components/button/button.module';
+import { LogoModule } from '@shared/components/logo/logo.module';
+import { ButtonGoogleModule } from '@shared/components/button-google/button-google.module';
+import { ButtonFbModule } from '@shared/components/button-fb/button-fb.module';
+import { AlertModule } from '@shared/components/alert/alert.module';
 
 @NgModule({
   declarations: [LoginPageComponent],
@@ -21,7 +21,7 @@ import { AlertModule } from './../../shared/components/alert/alert.module';
     LogoModule,
     ButtonGoogleModule,
     ButtonFbModule,
-    AlertModule
+    AlertModule,
   ],
   exports: [LoginPageComponent],
 })

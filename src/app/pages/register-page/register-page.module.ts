@@ -4,12 +4,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { RegisterPageComponent } from './register-page.component';
 
-import { ButtonModule } from '../../shared/components/button/button.module';
-import { LogoModule } from '../../shared/components/logo/logo.module';
-import { ButtonGoogleModule } from '../../shared/components/button-google/button-google.module';
-import { ButtonFbModule } from '../../shared/components/button-fb/button-fb.module';
+import { ButtonModule } from '@shared/components/button/button.module';
+import { LogoModule } from '@shared/components/logo/logo.module';
+import { ButtonGoogleModule } from '@shared/components/button-google/button-google.module';
+import { ButtonFbModule } from '@shared/components/button-fb/button-fb.module';
 
-import { AlertModule } from './../../shared/components/alert/alert.module';
+import { AlertModule } from '@shared/components/alert/alert.module';
 import { RegisterPageRoutingModule } from './register-page-routing.module';
 @NgModule({
   declarations: [RegisterPageComponent],
@@ -22,7 +22,7 @@ import { RegisterPageRoutingModule } from './register-page-routing.module';
     LogoModule,
     ButtonGoogleModule,
     ButtonFbModule,
-    AlertModule
+    AlertModule,
   ],
   exports: [RegisterPageComponent],
 })

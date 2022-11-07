@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Subscription } from 'rxjs';
 
-import { TransactionsService } from './../../../shared/services/transactions/transactions.service';
+import { TransactionsService } from '@services/transactions/transactions.service';
 
 @Component({
   selector: 'app-transactions',

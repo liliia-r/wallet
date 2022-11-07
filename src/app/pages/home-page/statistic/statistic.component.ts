@@ -2,9 +2,9 @@ import { Component, ElementRef, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Chart, registerables } from 'chart.js';
 
-import { TransactionsService } from './../../../shared/services/transactions/transactions.service';
-import { Transaction } from './../../../shared/models/transaction.model';
-import { backgroundStatistic } from '../../../shared/constants/constants';
+import { TransactionsService } from '@services/transactions/transactions.service';
+import { Transaction } from '@models/transaction.model';
+import { backgroundStatistic } from '@shared/constants/constants';
 
 @Component({
   selector: 'app-statistic',

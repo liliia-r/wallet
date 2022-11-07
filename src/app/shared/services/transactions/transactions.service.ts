@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { map, BehaviorSubject } from 'rxjs';
 
-import { Transaction } from './../../models/transaction.model';
-import { rangesExpense, rangesIncome } from '../../constants/constants';
+import { Transaction } from '@models/transaction.model';
+import { rangesExpense, rangesIncome } from '@shared/constants/constants';
 
 @Injectable({
   providedIn: 'root',

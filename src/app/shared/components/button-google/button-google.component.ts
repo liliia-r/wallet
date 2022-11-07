@@ -1,20 +1,19 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { LoginService } from './../../services/login/login.service';
+import { AuthService } from '@services/auth/auth.service';
 
 @Component({
   selector: 'app-button-google',
   templateUrl: './button-google.component.html',
-  styleUrls: ['./button-google.component.scss']
+  styleUrls: ['./button-google.component.scss'],
 })
-export class ButtonGoogleComponent  {
-
-  constructor(private loginService: LoginService, private router: Router) {}
+export class ButtonGoogleComponent {
+  constructor(private authService: AuthService, private router: Router) {}
 
   loginWithGoogle() {
-    this.loginService
+    this.authService
       .loginWithGoogle()
       .then(() => this.router.navigate(['/home']))
-      .catch((e) => console.log(e.message));
+      .catch(e => console.log(e.message));
   }
 }

@@ -1,6 +1,3 @@
-import { Transaction } from '../../../../shared/models/transaction.model';
-import { FormBuilder, Validators, FormControl, FormGroup } from '@angular/forms';
-import { TransactionsService } from '../../../../shared/services/transactions/transactions.service';
 import {
   Component,
   EventEmitter,
@@ -11,6 +8,9 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import { Params, Router, ActivatedRoute } from '@angular/router';
+import { FormBuilder, Validators, FormControl, FormGroup } from '@angular/forms';
+import { Transaction } from '@models/transaction.model';
+import { TransactionsService } from '@services/transactions/transactions.service';
 
 @Component({
   selector: 'app-add-transaction',
