@@ -1,0 +1,77 @@
+{
+  "REGISTER": {
+    "EMAIL": "Введіть email",
+    "PASSWORD": "Введіть пароль",
+    "CONFIRM": "Підтвердіть пароль",
+    "NAME": "Введіть ім'я",
+    "EMAIL_ERROR_1": "Email обов'язковий",
+    "EMAIL_ERROR_2": "Введіть правильний email",
+    "PASSWORD_ERROR_1": "Пароль обов'язковий",
+    "PASSWORD_ERROR_2": "Пароль має складатись як мінімум з однієї цифри, однієї великої літери, однієї маленької літери",
+    "PASSWORD_ERROR_3": "Пароль має складатись мінімум з 5-ти символів",
+    "CONFIRM_PASSWORD_ERROR_1": "Підтвердіть пароль",
+    "CONFIRM_PASSWORD_ERROR_2": "Пароль не співпадає",
+    "NAME_ERROR_1": "Ім'я обов'язкове",
+    "NAME_ERROR_2": "Ім'я має складатись мінімум з 3-х літер",
+    "ENTER": "Ввести",
+    "CLOSE": "Закрити",
+    "LOG_IN": "Зайти"
+  },
+  "LOGIN": {
+    "REGISTRATION": "Реєстрація"
+  },
+  "ERROR_MESSAGES": {
+    "An unknown error occurred!": "Виникла невідома помилка",
+    "This email does not exist": "Цей email не зареєстрований",
+    "This password is not correct": "Цей пароль неправильний",
+    "This email exists already": "Цей email вже зареєстрований"
+  },
+  "HEADER": {
+    "EN": "Англ.",
+    "UA": "Укр.",
+    "LOG_OUT": "Вийти"
+  },
+  "MAIN": {
+    "MAIN": "Головна",
+    "STATISTIC": "Статистика",
+    "BALANCE": "Баланс",
+    "CURRENCY": "Валюта",
+    "CURRENCY_SHORT": "грн",
+    "BUY": "Купівля",
+    "SELL": "Продаж",
+    "TOTAL_INCOME": "Загальний дохід",
+    "TOTAL_EXPENSE": "Загальні витрати"
+  },
+  "TRANSACTIONS": {
+    "NO_TRANSACTIONS": "У вас ще немає транзакцій",
+    "DATE": "Дата",
+    "DATE_ERROR": "Дата обов'язкова",
+    "TYPE": "Тип",
+    "CATEGORY": "Категорія",
+    "CATEGORY_ERROR": "Категорія обов'язкова",
+    "COMMENT": "Коментар",
+    "SUM": "Сума",
+    "SUM_ERROR": "Сума обов'язкова",
+    "ACTION": "Видалити/редагувати транзакцію",
+    "ADD": "Додати транзакцію",
+    "INCOME": "Дохід",
+    "EXPENSE": "Витрата",
+    "SAVE": "Зберегти",
+    "EDIT_TRANSACTION": "Редагувати транзакцію",
+    "EDIT": "Редагувати"
+  },
+  "RANGES_INCOME": {
+    "Regular income": "Постійний дохід",
+    "Non-regular income": "Інший дохід"
+  },
+  "RANGES_EXPENSE": {
+    "Basic": "Базові витрати",
+    "Food": "Їжа",
+    "Car": "Автомобіль",
+    "Development": "Розвиток",
+    "Children": "Діти",
+    "House": "Будинок",
+    "Education": "Освіта",
+    "The other": "Інше"
+  }
+}

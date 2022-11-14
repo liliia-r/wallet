@@ -1,7 +1,7 @@
 <div class="backdrop" (click)="onClose()"></div>
 <div class="alert-box">
-  <p> {{message}} </p>
+  <p> {{ ("ERROR_MESSAGES." + message) | translate}} </p>
   <div class="alert-box-actions">
-    <button class="btn" (click)="onClose()">Close</button>
+    <button class="btn" (click)="onClose()">{{ "REGISTER.CLOSE" | translate}}</button>
   </div>
 </div>

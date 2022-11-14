@@ -12,36 +12,42 @@
         <h1 class="login-page__title">Wallet</h1>
       </div>
 
-      <app-alert [message]="errorMessage" *ngIf="errorMessage" (closeModal)="onHandleError()"></app-alert>
+      <app-alert [message]="errorMessage" *ngIf="errorMessage" (closeModal)="onHandleError()">
+      </app-alert>
 
       <form class="login" [formGroup]="loginForm" (ngSubmit)="onLoginFormSubmit()">
 
         <div class="login__control">
           <div class="login__control-wrapper">
             <div class="login__control-icon control-icon__email"></div>
-            <input type="email" id="email" formControlName="email" placeholder="Enter email" />
+            <input type="email" id="email" formControlName="email" placeholder="{{'REGISTER.EMAIL' | translate}}" />
           </div>
-          <div class="login__validation">
-            <small>Email is required</small>
-            <small>Provide correct e-mail</small>
+          <div class="login__validation"
+            *ngIf="controlEmail?.invalid && (controlEmail?.dirty || controlEmail?.touched)">
+            <small *ngIf="controlEmail?.errors?.['required']">{{'REGISTER.EMAIL_ERROR_1' | translate}}</small>
+            <small *ngIf="controlEmail?.errors?.['email']">{{'REGISTER.EMAIL_ERROR_2' | translate}}</small>
           </div>
         </div>
 
         <div class="login__control">
           <div class="login__control-wrapper">
             <div class="login__control-icon control-icon__password"></div>
-            <input type="password" id="password" formControlName="password" placeholder="Enter password" />
+            <input type="password" id="password" formControlName="password"
+              placeholder="{{'REGISTER.PASSWORD' | translate}}" />
           </div>
-          <div class="login__validation">
-            <small>Password is required</small>
-            <small>Provide correct password</small>
+          <div class="login__validation"
+            *ngIf="controlPassword?.invalid && (controlPassword?.dirty || controlPassword?.touched)">
+            <small *ngIf="controlPassword?.errors?.['required']">{{'REGISTER.PASSWORD_ERROR_1' | translate}}</small>
+            <small *ngIf="controlPassword?.errors?.['pattern']">{{'REGISTER.PASSWORD_ERROR_2' | translate}}</small>
           </div>
         </div>
 
-        <button type="submit" class="login__submit" [disabled]="!loginForm.valid">Enter</button>
+        <button type="submit" class="login__submit" [disabled]="!loginForm.valid">{{'REGISTER.ENTER' |
+          translate}}</button>
       </form>
 
-      <button type="button" class="register__button" (click)="register()">Registration</button>
+      <button type="button" class="register__button" (click)="register()">{{'LOGIN.REGISTRATION' |
+        translate}}</button>
 
       <div class="login__socials">
         <app-button-google></app-button-google>

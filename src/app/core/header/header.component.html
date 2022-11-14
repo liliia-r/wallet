@@ -4,11 +4,13 @@
     <h1 class="header__title">Wallet</h1>
   </div>
 
+  <app-language-checkbox></app-language-checkbox>
+
   <div class="header__nav">
     <p class="header__user"> {{userName}} </p>
     <div class="header__logout-wrapper" (click)="onLogout()">
       <div class="header__logout-icon"></div>
-      <div class="header__logout-text">Log out</div>
+      <div class="header__logout-text">{{"HEADER.LOG_OUT" | translate}}</div>
     </div>
   </div>
 </header>

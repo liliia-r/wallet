@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { RegisterPageComponent } from './register-page.component';
 
@@ -23,6 +24,7 @@ import { RegisterPageRoutingModule } from './register-page-routing.module';
     ButtonGoogleModule,
     ButtonFbModule,
     AlertModule,
+    TranslateModule,
   ],
   exports: [RegisterPageComponent],
 })

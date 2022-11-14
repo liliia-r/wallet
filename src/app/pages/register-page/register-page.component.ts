@@ -16,28 +16,6 @@ export class RegisterPageComponent implements OnInit {
   registerForm!: FormGroup;
   errorMessage!: string | null;
 
-  constructor(private router: Router, private authService: AuthService) {}
-
-  ngOnInit(): void {
-    this.registerForm = new FormGroup(
-      {
-        email: new FormControl(null, [Validators.required, Validators.email]),
-        password: new FormControl(null, [
-          Validators.required,
-          Validators.minLength(5),
-          Validators.pattern(/(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]/g),
-        ]),
-        confirmPassword: new FormControl(null, [Validators.required]),
-        name: new FormControl(null, [Validators.required, Validators.minLength(3)]),
-      },
-      [CustomValidators.MatchValidator('password', 'confirmPassword')]
-    );
-  }
-
-  login() {
-    this.router.navigate(['/login']);
-  }
-
   get controlEmail() {
     return this.registerForm.get('email');
   }
@@ -58,6 +36,28 @@ export class RegisterPageComponent implements OnInit {
     return (
       this.registerForm.getError('mismatch') && this.registerForm.get('confirmPassword')?.touched
     );
+  }
+
+  constructor(private router: Router, private authService: AuthService) {}
+
+  ngOnInit(): void {
+    this.registerForm = new FormGroup(
+      {
+        email: new FormControl(null, [Validators.required, Validators.email]),
+        password: new FormControl(null, [
+          Validators.required,
+          Validators.minLength(5),
+          Validators.pattern(/(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]/g),
+        ]),
+        confirmPassword: new FormControl(null, [Validators.required]),
+        name: new FormControl(null, [Validators.required, Validators.minLength(3)]),
+      },
+      [CustomValidators.MatchValidator('password', 'confirmPassword')]
+    );
+  }
+
+  login() {
+    this.router.navigate(['/login']);
   }
 
   submitRegistration() {

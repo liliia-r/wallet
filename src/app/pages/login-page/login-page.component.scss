@@ -1,11 +1,11 @@
 @font-face {
-  font-family: "BauhausC";
-  src: url("../../../assets/fonts/bauhouse/BauhausC_Medium_Bold.ttf") format("woff2");
+  font-family: 'BauhausC';
+  src: url('../../../assets/fonts/bauhouse/BauhausC_Medium_Bold.ttf') format('woff2');
 }
 
 @font-face {
-  font-family: "HelveticaNeueCyr";
-  src: url("../../../assets/fonts/HelveticaNeueCyr/HelveticaNeueCyr-Roman.ttf") format("woff2");
+  font-family: 'HelveticaNeueCyr';
+  src: url('../../../assets/fonts/HelveticaNeueCyr/HelveticaNeueCyr-Roman.ttf') format('woff2');
 }
 
 .login-page.container {
@@ -15,7 +15,7 @@
 }
 
 .login-page__title {
-  font-family: "BauhausC";
+  font-family: 'BauhausC';
   font-size: 2.4rem;
 }
 
@@ -56,7 +56,7 @@
       border: none;
       background-color: #f2f7f7;
       border-radius: 5px;
-      font-family: "HelveticaNeueCyr";
+      font-family: 'HelveticaNeueCyr';
       font-size: 2rem;
       padding-left: 5.4rem;
       opacity: 0.5;
@@ -81,7 +81,15 @@
   }
 
   &__validation {
-    display: none;
+    text-align: left;
+    font-size: 1.4rem;
+    padding-top: 2px;
+    color: red;
+    font-family: 'HelveticaNeueCyr';
+
+    small {
+      display: block;
+    }
   }
 
   &__submit {
@@ -90,7 +98,7 @@
     background-color: var(--color-secondary);
     border-radius: 5px;
     margin-bottom: 3rem;
-    font-family: "HelveticaNeueCyr";
+    font-family: 'HelveticaNeueCyr';
     font-size: 1.5rem;
     letter-spacing: 1.5px;
     color: var(--color-white-text);
@@ -113,11 +121,11 @@
 }
 
 .control-icon__email {
-  background-image: url("../../../assets/icons/e-mail/baseline-email-24px.svg");
+  background-image: url('../../../assets/icons/e-mail/baseline-email-24px.svg');
 }
 
 .control-icon__password {
-  background-image: url("../../../assets/icons/lock/baseline-lock-24px.svg");
+  background-image: url('../../../assets/icons/lock/baseline-lock-24px.svg');
 }
 
 .register__button {
@@ -126,7 +134,7 @@
   transition: all 0.3s;
   margin-bottom: 2rem;
   background: transparent;
-  font-family: "HelveticaNeueCyr";
+  font-family: 'HelveticaNeueCyr';
   font-size: 1.4rem;
   font-weight: 400;
 
@@ -139,7 +147,7 @@
 @media screen and (min-width: 768px) {
   .login-page.container {
     background-blend-mode: multiply;
-    background: #3d5575 url("../../../assets/images/bg.png");
+    background: #3d5575 url('../../../assets/images/bg.png');
     background-size: cover;
   }
 
@@ -159,7 +167,7 @@
 
   .login__name {
     color: #fff;
-    font-family: "BauhausC";
+    font-family: 'BauhausC';
     font-size: 2.4rem;
     font-weight: 500;
     text-align: center;
@@ -179,7 +187,7 @@
   .login__wrapper-left {
     width: 30%;
     background-blend-mode: multiply;
-    background: #3d5575 url("../../../assets/images/bg.png");
+    background: #3d5575 url('../../../assets/images/bg.png');
     background-size: cover;
 
     display: flex;
@@ -205,7 +213,7 @@
   .login__img {
     min-width: 25rem;
     height: 40rem;
-    background: url("../../../assets/images/phone.webp") no-repeat 50%;
+    background: url('../../../assets/images/phone.webp') no-repeat 50%;
     background-size: contain;
     margin-bottom: 4rem;
   }

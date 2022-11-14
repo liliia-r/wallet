@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { HomePageComponent } from './home-page.component';
 
@@ -24,7 +25,14 @@ import { StatisticComponent } from './statistic/statistic.component';
     TransactionItemComponent,
     StatisticComponent,
   ],
-  imports: [CommonModule, HomePageRoutingModule, CoreModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    HomePageRoutingModule,
+    CoreModule,
+    TranslateModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
   exports: [HomePageComponent],
 })
 export class HomePageModule {}

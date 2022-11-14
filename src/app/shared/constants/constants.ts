@@ -1,48 +1,15 @@
-export const rangesExpense: { value: string; label: string }[] = [
-  {
-    value: 'Basic',
-    label: 'Basic',
-  },
-  {
-    value: 'Food',
-    label: 'Food',
-  },
-  {
-    value: 'Car',
-    label: 'Car',
-  },
-  {
-    value: 'Development',
-    label: 'Development',
-  },
-  {
-    value: 'Children',
-    label: 'Children',
-  },
-  {
-    value: 'House',
-    label: 'House',
-  },
-  {
-    value: 'Education',
-    label: 'Education',
-  },
-  {
-    value: 'The other',
-    label: 'The other',
-  },
+export const rangesExpense: string[] = [
+  'Basic',
+  'Food',
+  'Car',
+  'Development',
+  'Children',
+  'House',
+  'Education',
+  'The other',
 ];
 
-export const rangesIncome: { value: string; label: string }[] = [
-  {
-    value: 'Regular income',
-    label: 'Regular income',
-  },
-  {
-    value: 'Non-regular income',
-    label: 'Non-regular income',
-  },
-];
+export const rangesIncome: string[] = ['Regular income', 'Non-regular income'];
 
 export const backgroundStatistic = [
   '#80bdff',

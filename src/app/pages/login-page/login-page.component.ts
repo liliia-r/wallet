@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, Validators, FormControl } from '@angular/forms';
 import { throwError } from 'rxjs';
 import { FirebaseError } from 'firebase/app';
 
@@ -14,9 +14,17 @@ export class LoginPageComponent {
   errorMessage!: string | null;
 
   loginForm = this.fb.group({
-    email: ['', [Validators.required, Validators.email]],
-    password: ['', [Validators.required]],
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [Validators.required]),
   });
+
+  get controlEmail() {
+    return this.loginForm.get('email');
+  }
+
+  get controlPassword() {
+    return this.loginForm.get('password');
+  }
 
   constructor(private router: Router, private fb: FormBuilder, private authService: AuthService) {}
 
@@ -39,10 +47,10 @@ export class LoginPageComponent {
     }
     switch (errorRes.code) {
       case 'auth/wrong-password':
-        this.errorMessage = 'This password is not correct.';
+        this.errorMessage = 'This password is not correct';
         break;
       case 'auth/user-not-found':
-        this.errorMessage = 'This email does not exist.';
+        this.errorMessage = 'This email does not exist';
         break;
       default:
         this.errorMessage = 'An unknown error occurred!';

@@ -4,20 +4,21 @@
     <table>
       <thead>
         <tr>
-          <td>Date</td>
-          <td>Type</td>
-          <td>Category</td>
-          <td>Comment</td>
-          <td>Sum</td>
-          <td>Edit/Delete transaction</td>
+          <td>{{"TRANSACTIONS.DATE" | translate}}</td>
+          <td>{{"TRANSACTIONS.TYPE" | translate}}</td>
+          <td>{{"TRANSACTIONS.CATEGORY" | translate}}</td>
+          <td>{{"TRANSACTIONS.COMMENT" | translate}}</td>
+          <td>{{"TRANSACTIONS.SUM" | translate}}</td>
+          <td>{{"TRANSACTIONS.ACTION" | translate}}</td>
         </tr>
       </thead>
 
       <tbody>
         <tr *ngFor="let transaction of transactions, let id = index">
           <td> {{transaction.date}} </td>
-          <td> {{transaction.type}} </td>
-          <td> {{transaction.category}} </td>
+          <td> {{"TRANSACTIONS." + transaction.type | uppercase | translate}} </td>
+          <td *ngIf="transaction.type === 'expense'"> {{"RANGES_EXPENSE." + transaction.category | translate}} </td>
+          <td *ngIf="transaction.type === 'income'"> {{"RANGES_INCOME." + transaction.category | translate}} </td>
           <td> {{transaction.comment}} </td>
           <td [ngStyle]="{'color': transaction.type === 'expense' ? '#e18337' : '#3a5374'}"> {{transaction.sum}} </td>
           <td>
@@ -33,7 +34,7 @@
 
   </div>
 
-  <p *ngIf="!transactions.length">No transactions yet</p>
+  <p *ngIf="!transactions.length">{{"TRANSACTIONS.NO_TRANSACTIONS" | translate}}</p>
 </div>
 
 <button class="add-button" (click)="addTransactionModal()">+</button>

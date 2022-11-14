@@ -1,0 +1,77 @@
+{
+  "REGISTER": {
+    "EMAIL": "Enter email",
+    "PASSWORD": "Enter password",
+    "CONFIRM": "Confirm password",
+    "NAME": "Enter your name",
+    "EMAIL_ERROR_1": "Email is required",
+    "EMAIL_ERROR_2": "Provide correct email",
+    "PASSWORD_ERROR_1": "Password is required",
+    "PASSWORD_ERROR_2": "Password should contain at least one number, one big letter, one small letter",
+    "PASSWORD_ERROR_3": "Password should be at least 5 characters long",
+    "CONFIRM_PASSWORD_ERROR_1": "You should confirm password",
+    "CONFIRM_PASSWORD_ERROR_2": "Password does not match",
+    "NAME_ERROR_1": "Name is required",
+    "NAME_ERROR_2": "Name must be at least 3 characters long",
+    "ENTER": "Enter",
+    "CLOSE": "Close",
+    "LOG_IN": "Log in"
+  },
+  "LOGIN": {
+    "REGISTRATION": "Registration"
+  },
+  "ERROR_MESSAGES": {
+    "An unknown error occurred!": "An unknown error occurred!",
+    "This email does not exist": "This email does not exist",
+    "This password is not correct": "This password is not correct",
+    "This email exists already": "This email exists already"
+  },
+  "HEADER": {
+    "EN": "En",
+    "UA": "Ua",
+    "LOG_OUT": "Log out"
+  },
+  "MAIN": {
+    "MAIN": "Main",
+    "STATISTIC": "Statistic",
+    "BALANCE": "Balance",
+    "CURRENCY": "Currency",
+    "CURRENCY_SHORT": "uah",
+    "BUY": "Buy",
+    "SELL": "Sell",
+    "TOTAL_INCOME": "Total income",
+    "TOTAL_EXPENSE": "Total expense"
+  },
+  "TRANSACTIONS": {
+    "NO_TRANSACTIONS": "No transactions yet",
+    "DATE": "Date",
+    "DATE_ERROR": "Date is required",
+    "TYPE": "Type",
+    "CATEGORY": "Category",
+    "CATEGORY_ERROR": "Category is required",
+    "COMMENT": "Comment",
+    "SUM": "Sum",
+    "SUM_ERROR": "Sum is required",
+    "ACTION": "Edit/delete transaction",
+    "ADD": "Add transaction",
+    "INCOME": "Income",
+    "EXPENSE": "Expense",
+    "SAVE": "Save",
+    "EDIT_TRANSACTION": "Edit transaction",
+    "EDIT": "EDIT"
+  },
+  "RANGES_INCOME": {
+    "Regular income": "Regular income",
+    "Non-regular income": "Non-regular income"
+  },
+  "RANGES_EXPENSE": {
+    "Basic": "Basic",
+    "Food": "Food",
+    "Car": "Car",
+    "Development": "Development",
+    "Children": "Children",
+    "House": "House",
+    "Education": "Education",
+    "The other": "The other"
+  }
+}

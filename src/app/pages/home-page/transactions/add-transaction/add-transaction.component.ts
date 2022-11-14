@@ -21,8 +21,8 @@ export class AddTransactionComponent implements OnInit, OnChanges {
   @Output() closeTransactionModal = new EventEmitter<void>();
   @Input() checkedId: number;
 
-  expenses: { value: string; label: string }[];
-  incomes: { value: string; label: string }[];
+  expenses: string[];
+  incomes: string[];
 
   checkedTransaction: Transaction;
   isEditMode: boolean;

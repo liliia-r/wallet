@@ -18,26 +18,27 @@
         <div class="register__control">
           <div class="register__control-wrapper">
             <div class="register__control-icon control-icon__email"></div>
-            <input type="email" id="email" formControlName="email" placeholder="Enter email" />
+            <input type="email" id="email" formControlName="email" placeholder="{{'REGISTER.EMAIL' | translate}}" />
           </div>
           <div class="register__validation"
             *ngIf="controlEmail?.invalid && (controlEmail?.dirty || controlEmail?.touched)">
-            <small *ngIf="controlEmail?.errors?.['required']">Email is required</small>
-            <small *ngIf="controlEmail?.errors?.['email']">Provide correct e-mail</small>
+            <small *ngIf="controlEmail?.errors?.['required']">{{'REGISTER.EMAIL_ERROR_1' | translate}}</small>
+            <small *ngIf="controlEmail?.errors?.['email']">{{'REGISTER.EMAIL_ERROR_2' | translate}}</small>
           </div>
         </div>
 
         <div class="register__control">
           <div class="register__control-wrapper">
             <div class="register__control-icon control-icon__password"></div>
-            <input type="password" id="password" formControlName="password" placeholder="Enter password" />
+            <input type="password" id="password" formControlName="password"
+              placeholder="{{'REGISTER.PASSWORD' | translate}}" />
           </div>
           <div class="register__validation"
             *ngIf="controlPassword?.invalid && (controlPassword?.dirty || controlPassword?.touched)">
-            <small *ngIf="controlPassword?.errors?.['required']">Password is required</small>
-            <small *ngIf="controlPassword?.errors?.['min']">Password should be at least 5 symbols</small>
-            <small *ngIf="controlPassword?.errors?.['pattern']">Provide should contain at least one number, one big
-              letter, one small letter</small>
+            <small *ngIf="controlPassword?.errors?.['required']">{{'REGISTER.PASSWORD_ERROR_1' | translate}}</small>
+            <small *ngIf="controlPassword?.errors?.['minlength']">{{'REGISTER.PASSWORD_ERROR_3' | translate}}</small>
+            <small *ngIf="controlPassword?.errors?.['pattern']">{{'REGISTER.PASSWORD_ERROR_2' | translate}}</small>
+
           </div>
         </div>
 
@@ -45,33 +46,35 @@
           <div class="register__control-wrapper">
             <div class="register__control-icon control-icon__confirm-password"></div>
             <input type="password" id="confirm-password" formControlName="confirmPassword"
-              placeholder="Confirm password" />
+              placeholder="{{'REGISTER.CONFIRM' | translate}}" />
           </div>
           <div class="register__validation"
             *ngIf="passwordMatchError && (controlConfirmPassword?.dirty || controlConfirmPassword?.touched)">
-            <small *ngIf="controlConfirmPassword?.errors?.['required']">You should confirm password</small>
-            <small *ngIf="passwordMatchError">Password does not match</small>
+            <small *ngIf="controlConfirmPassword?.errors?.['required']">{{'REGISTER.CONFIRM_PASSWORD_ERROR_1' |
+              translate}}</small>
+            <small *ngIf="passwordMatchError">{{'REGISTER.CONFIRM_PASSWORD_ERROR_2' |
+              translate}}</small>
           </div>
         </div>
 
         <div class="register__control">
           <div class="register__control-wrapper">
             <div class="register__control-icon control-icon__name"></div>
-            <input type="text" id="name" formControlName="name" placeholder="Enter your name" />
+            <input type="text" id="name" formControlName="name" placeholder="{{'REGISTER.NAME' | translate}}" />
           </div>
           <div class="register__validation"
             *ngIf="controlName?.invalid && (controlName?.dirty || controlName?.touched)">
-            <small *ngIf="controlName?.errors?.['required']">Name is required</small>
-            <small *ngIf="controlName?.errors?.['minlength']"> Name must be at least
-              {{controlName?.errors?.['minlength'].requiredLength}} characters long.</small>
+            <small *ngIf="controlName?.errors?.['required']">{{'REGISTER.NAME_ERROR_1' | translate}}</small>
+            <small *ngIf="controlName?.errors?.['minlength']">{{'REGISTER.NAME_ERROR_2' | translate}}</small>
           </div>
         </div>
 
-        <button type="submit" class="register__submit" [disabled]="!registerForm.valid">Enter</button>
+        <button type="submit" class="register__submit" [disabled]="!registerForm.valid">{{'REGISTER.ENTER' |
+          translate}}</button>
       </form>
 
       <button type="button" class="login__button" (click)="login()">
-        Log in
+        {{'REGISTER.LOG_IN' | translate}}
       </button>
 
       <div class="register__socials">

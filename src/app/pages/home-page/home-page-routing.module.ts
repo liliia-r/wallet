@@ -9,13 +9,13 @@ const routes: Routes = [
   {
     path: '',
     component: HomePageComponent,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
     children: [
-      {
-        path: '',
-        redirectTo: 'transactions',
-        pathMatch: 'full',
-      },
+      // {
+      //   path: '',
+      //   redirectTo: 'transactions',
+      //   pathMatch: 'full',
+      // },
       {
         path: 'transactions',
         component: TransactionsComponent,

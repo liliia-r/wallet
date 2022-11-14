@@ -4,13 +4,13 @@
       [routerLinkActive]="'navigation__item--active'">
       <a class="navigation__link">
         <i class="item-home"></i>
-        <p class="navigation__text">Main</p>
+        <p class="navigation__text"> {{"MAIN.MAIN" | translate}} </p>
       </a>
     </li>
     <li class="navigation__item" [routerLink]="['/statistic']" [routerLinkActive]="'navigation__item--active'">
       <a class="navigation__link">
         <i class="item-graph"></i>
-        <p class="navigation__text">Statistic</p>
+        <p class="navigation__text">{{"MAIN.STATISTIC" | translate}}</p>
       </a>
     </li>
     <li class="navigation__item">
@@ -21,7 +21,7 @@
   </ul>
 
   <div class="balance">
-    <p class="balance__title">Balance</p>
-    <p class="balance__summ"> {{transactionsService.totalSum$ | async}} uah</p>
+    <p class="balance__title"> {{"MAIN.BALANCE" | translate}}</p>
+    <p class="balance__summ"> {{transactionsService.totalSum$ | async}} {{"MAIN.CURRENCY_SHORT" | translate}}</p>
   </div>
 </nav>
